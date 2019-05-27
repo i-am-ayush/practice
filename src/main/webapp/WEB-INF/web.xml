@@ -1,0 +1,91 @@
+<web-app>
+    <display-name>Archetype Created Web Application</display-name>
+    <context-param>
+        <param-name>admin-email</param-name>
+        <param-value>admin@gmail.com</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>com.Concurrent</listener-class>
+    </listener>
+
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/static/header.jsp</include-prelude>
+            <include-coda>/static/footer.jsp</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/jspexamples/ErrorPage.jsp</location>
+    </error-page>
+    <filter>
+        <filter-name>DemoFilter</filter-name>
+        <filter-class>com.DemoFilter</filter-class>
+        <init-param>
+            <param-name>construction</param-name>
+            <param-value>no</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>DemoFilter</filter-name>
+        <url-pattern>/helloservlet</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Practice</servlet-name>
+        <servlet-class>com.DemoServlet</servlet-class>
+        <init-param>
+            <param-name>message</param-name>
+            <param-value>This is good</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Practice2</servlet-name>
+        <servlet-class>com.DemoServlet2</servlet-class>
+        <init-param>
+            <param-name>message2</param-name>
+            <param-value>This is better</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>EnhancedErrorPage</servlet-name>
+        <servlet-class>com.EnhanceErrorpage</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>s1</servlet-name>
+        <servlet-class>com.HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>s2</servlet-name>
+        <servlet-class>com.QueryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>s2</servlet-name>
+        <url-pattern>/queryservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>s1</servlet-name>
+        <url-pattern>/helloservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnhancedErrorPage</servlet-name>
+        <url-pattern>/EnhancedError</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Practice</servlet-name>
+        <url-pattern>/practice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Practice2</servlet-name>
+        <url-pattern>/practice2</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>basic1.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
