@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/aop
+   http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/aop ">
+
+    <bean id="animal1" class="com.model.Animal">
+  <!--  <property name="name" value="dog">
+    </property> -->
+        <constructor-arg name="name" value="animal2"></constructor-arg>
+        <constructor-arg name="name2" value="anim"></constructor-arg>
+
+
+    </bean>
+    <bean id="blank" class="com.model.BlankAnimal">
+         <!--<property name="animal" ref="animal1">-->
+          <!--</property>-->
+        <!--<constructor-arg value="animal2"></constructor-arg>-->
+        <!--<constructor-arg value="anim"></constructor-arg>-->
+        <!--<constructor-arg>-->
+            <!--<list>-->
+                <!--<value>one</value>-->
+                <!--<value>two</value>-->
+            <!--</list>-->
+        <!--</constructor-arg>-->
+
+    </bean>
+    <bean id="hero1" class="com.model.Hero">
+        <property name="enemy" ref="animal1">
+
+        </property>
+        <property name="name" value="friday"></property>
+    </bean>
+</beans>
